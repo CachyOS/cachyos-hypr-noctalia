@@ -31,4 +31,5 @@ Thank you for using CachyOS Hypr/Noctalia Settings. We hope you enjoy your custo
 * hyprpicker
 * adw-gtk-theme
 * kde-cli-tools
+* qt6ct
 * uwsm
