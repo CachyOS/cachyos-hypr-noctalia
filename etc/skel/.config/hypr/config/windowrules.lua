@@ -20,8 +20,8 @@ hl.window_rule({
         class = "^(steam)$",
         title = "^(Launching\\.\\.\\.)$"
     },
-    float = true,
-    center = true,
+    float     = true,
+    center    = true,
     workspace = gamingWorkspace,
 })
 hl.window_rule({
@@ -30,9 +30,9 @@ hl.window_rule({
         title         = "^(.+)$",
         initial_title = "negative:^(.*\\\\home\\\\.*)$",
     },
-    size       = "monitor_w monitor_h",
+    size             = "monitor_w monitor_h",
     fullscreen_state = 2,
-    content    = "game",
+    content          = "game",
 })
 hl.window_rule({
     match = {
