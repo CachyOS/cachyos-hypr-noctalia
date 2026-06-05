@@ -22,7 +22,7 @@ hl.window_rule({
         initial_title = "negative:^(.*\\\\home\\\\.*)$",
     },
     size       = "monitor_w monitor_h",
-    fullscreen = true,
+    fullscreen_state = 2,
     content    = "game",
 })
 hl.window_rule({
