@@ -14,7 +14,6 @@ Thank you for using CachyOS Hypr/Noctalia Settings. We hope you enjoy your custo
 * dolphin
 * gnome-text-editor
 * gnome-calculator
-* zen-browser
 * xorg-xhost
 * xdg-desktop-portal-hyprland
 * grim
