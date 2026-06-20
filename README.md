@@ -9,7 +9,8 @@ This repository contains configuration files for various programs and tools used
 Thank you for using CachyOS Hypr/Noctalia Settings. We hope you enjoy your customized system!
 
 ## Dependencies
-* noctalia-shell
+//TODO: fix deps; confirm noctalia stable package name; remove unneeded packages from screen-toolkit
+* noctalia
 * kitty
 * dolphin
 * gnome-text-editor
