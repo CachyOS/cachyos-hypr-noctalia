@@ -1,4 +1,4 @@
-
+-- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 -- Picture-in-Picture
 hl.window_rule({
     match             = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
@@ -54,6 +54,8 @@ hl.window_rule({ match = { class = "^(vesktop|discord)$" }, primaryWorkspace })
 hl.window_rule({ match = { class = "^(.*[Cc]alculator.*)$" }, float = true, size = "380 616" })
 hl.window_rule({ match = { class = "^(org.kde.keditfiletype)$" }, float = true })
 hl.window_rule({ match = { class = "^(org.kde.ark)$" }, size = "(monitor_w*0.40) (monitor_h*0.40)" })
+hl.window_rule({ match = { class = "^(.*satty.*)$" }, min_size = "850 450", float = true })
+hl.window_rule({ match = { class = "^(dev\\.)?(noctalia\\.Noctalia\\.Settings)$" }, float = true, size = "(monitor_w*0.70) (monitor_h*0.70)" })
 hl.window_rule({
     match = {
         class = "^(org.kde.dolphin)$",
