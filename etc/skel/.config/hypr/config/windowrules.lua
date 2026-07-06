@@ -1,4 +1,8 @@
 -- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
+
+-- Generic floating window size
+hl.window_rule({ match = { float = true }, size = "monitor_w*0.4 monitor_h*0.3" })
+
 -- Picture-in-Picture
 hl.window_rule({
     match             = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
