@@ -2,21 +2,23 @@
 You will want to configure a few user-specific things after setup.
 
 ### Location `~/.config/hypr/config`
-* `monitors.lua` will setup your monitors.
+* `monitors.lua` Will setup your monitors.
   * `output` should be your monitor id; you can run `hyprctl monitors` to get this id (e.g. `DP-1`). 
   * `mode` should be in a format such as `1920x1080@60` (horizontal x vertical @ refresh rate).
   * `scale` you will most likely want `1`, but play around with it.
   * You will need to reboot after the first adjustment, but future adjustments should be reflected live.
-* `defaults.lua` add your monitor assignments here. your primary monitor and monitor 1 should generally be the same monitor.
-* `input.lua` you can define your various hypr input settings here. You'll probably want to adjust the `sensitivity`.
-* `keybinds.lua` review this file to see all the keybinds for these dots
-* `windowrules.lua` if you find yourself wondering why certain windows have certain behaviors check this file; you can also add/remove rules as you see fit
-* `workspaces.lua` add various workspace settings here. see examples, I recommend added 3 workspaces per monitor (shown) plus the gaming workspace to the primary monitor.
+* `defaults.lua`
+  * Add your monitor assignments here. your primary monitor and monitor 1 should generally be the same monitor.
+  * Define your number of workspaces per monitor. Do not exceed 10.
+* `input.lua` You can define your various hypr input settings here. You'll probably want to adjust the `sensitivity`.
+* `keybinds.lua` Review this file to see all the keybinds for these dots
+* `windowrules.lua` If you find yourself wondering why certain windows have certain behaviors check this file; you can also add/remove rules as you see fit
+* `workspaces.lua` Add various workspace settings here. see examples, I recommend added 3 workspaces per monitor (shown) plus the gaming workspace to the primary monitor.
 * `environment.lua` is used for setting hypr or user specific environmental variables. not required to adjust, and it's preferable to add these to UWSM instead (see below).
 ### Location `~/.config/uwsm`
 * `env` is a file used for defining global variables, you can use this for general variables that need to be assigned for your specific user account.
 ### Location `~/.config/noctalia`
-* `config.toml` this is where base configuration lives for cachyos-hypr-noctalia lives. If you're wondering why the defaults differ from a vanilla noctalia v5 installation, this is why. You shouldn't have to touch anything in this file.
+* `config.toml` This is where base configuration lives for cachyos-hypr-noctalia lives. If you're wondering why the defaults differ from a vanilla noctalia v5 installation, this is why. You shouldn't have to touch anything in this file.
 ### Location `noctalia settings` (Super + Z)
 * You can edit Noctalia settings here. I'd recommend going to the templates section and turning on any color templates for any apps you may use.
 * Also check out the plugins store
