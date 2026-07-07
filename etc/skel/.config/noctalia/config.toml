@@ -1,5 +1,5 @@
 [bar.default]
-center = [ "workspaces", "active_window" ]
+center = [ "workspaces", "spacer_1", "active_window" ]
 end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "session" ]
 margin_edge = 0
 margin_ends = 0
@@ -128,7 +128,7 @@ capsule_fill = "on_secondary"
 color = "secondary"
 
 [widget.workspaces]
-active_pill_size = 3.0
+active_pill_size = 2.5
 display = "none"
-inactive_pill_size = 2.0
+inactive_pill_size = 1.0
 pill_scale = 0.80
