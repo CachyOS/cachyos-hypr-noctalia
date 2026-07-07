@@ -15,10 +15,6 @@ hl.bind(mainMod .. " + F",           hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + J",           hl.dsp.layout("togglesplit"))
 
 -- Change focus
-for i = 1, NUM_WPM do
-    local key = i % 10
-    hl.bind(mainMod .. " + CONTROL + " .. key, hl.dsp.focus({ workspace = "m~" .. i }))
-end
 hl.bind(mainMod .. " + Left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + Right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + Up",    hl.dsp.focus({ direction = "up" }))
@@ -109,9 +105,15 @@ hl.bind(mainMod .. " + 1", hl.dsp.focus({ monitor = MONITOR1 }))
 hl.bind(mainMod .. " + 2", hl.dsp.focus({ monitor = MONITOR2 }))
 
 -- Focus on workspace number
-for i = 1, 10 do
+-- Absolute
+for i = 1, NUM_WPM do
     local key = i % 10
     hl.bind(mainMod .. " + TAB + " .. key, hl.dsp.focus({ workspace = i }))
+end
+-- Relative
+for i = 1, NUM_WPM do
+    local key = i % 10
+    hl.bind(mainMod .. " + CONTROL + " .. key, hl.dsp.focus({ workspace = "m~" .. i }))
 end
 
 -- Move to adjacent workspaces and next empty on a given monitor
