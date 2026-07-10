@@ -1,5 +1,5 @@
 [bar.default]
-center = [ "workspaces" ]
+center = [ "workspaces", "spacer_1", "active_window" ]
 end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "session" ]
 margin_edge = 0
 margin_ends = 0
@@ -15,7 +15,7 @@ thickness = 35
     border = ""
     fill = "on_secondary"
     id = "g1"
-    members = [ "sysmon", "sysmon_2", "sysmon_3" ]
+    members = [ "temp", "sysmon_2", "sysmon_3" ]
     opacity = 1.0
     padding = 6.0
 
@@ -106,12 +106,12 @@ color = "error"
 [widget.spacer_1]
 type = "spacer"
 
-[widget.sysmon]
-glyph = "cpu"
-stat = "cpu_temp"
+[widget.temp]
+show_label = false
 
 [widget.sysmon_2]
 glyph = "gpu-usage"
+show_lavel = false
 stat = "gpu_temp"
 type = "sysmon"
 
@@ -128,5 +128,9 @@ capsule_fill = "on_secondary"
 color = "secondary"
 
 [widget.workspaces]
-display = "name"
-max_label_chars = 10
+active_pill_size = 2.5
+capsule = true
+capsule_fill = "on_primary"
+display = "none"
+inactive_pill_size = 1.0
+pill_scale = 0.80
