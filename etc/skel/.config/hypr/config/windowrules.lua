@@ -37,10 +37,11 @@ hl.window_rule({
         class         = "^(steam_app.*)$",
         initial_title = "^$",
     },
-    float            = true,
     center           = true,
+    float            = true,
     fullscreen       = false,
     fullscreen_state = 0,
+    workspace        = gamingWorkspace,
 })
 
 -- Apps
