@@ -1,10 +1,14 @@
+[accessibility]
+ui_scale = 1.20
+
 [bar.default]
 center = [ "workspaces", "spacer_1", "active_window" ]
+concave_edge_corners = true
 end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "session" ]
 margin_edge = 0
 margin_ends = 0
-radius_bottom_left = -10
-radius_bottom_right = -10
+radius_bottom_left = 12
+radius_bottom_right = 12
 radius_top_left = 0
 radius_top_right = 0
 scale = 1.10
@@ -24,7 +28,6 @@ clipboard_image_action_command = "satty -f -"
 launch_apps_as_systemd_services = true
 polkit_agent = true
 settings_show_advanced = true
-ui_scale = 1.20
 
     [shell.panel]
     open_near_click_control_center = true
@@ -111,7 +114,7 @@ show_label = false
 
 [widget.sysmon_2]
 glyph = "gpu-usage"
-show_lavel = false
+show_label = false
 stat = "gpu_temp"
 type = "sysmon"
 
