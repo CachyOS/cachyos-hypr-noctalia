@@ -29,9 +29,6 @@ launch_apps_as_systemd_services = true
 polkit_agent = true
 settings_show_advanced = true
 
-    [shell.greeter_sync]
-    auto_sync = true
-    
     [shell.panel]
     open_near_click_control_center = true
     session_placement = "floating"
