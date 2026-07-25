@@ -45,6 +45,25 @@ end
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
 
+-- Zoom
+local function zoomfunction(value)
+    local zoomvalue = hl.get_config("cursor:zoom_factor")
+    if (zoomvalue + value) > 3.0 then
+        hl.config({ cursor = { zoom_factor = 3.0 } })
+    elseif (zoomvalue + value) < 1.0 then
+        hl.config({ cursor = { zoom_factor = 1.0 } })
+    else
+        hl.config({ cursor = { zoom_factor = zoomvalue + value } })
+    end
+end
+hl.bind(mainMod .. " + Minus", function() zoomfunction(-0.3) end, { repeating = true})
+hl.bind(mainMod .. " + Plus", function() zoomfunction(0.3) end, { repeating = true })
+
+--# Zoom with keypad
+hl.bind(mainMod .. " + code:82", function() zoomfunction(-0.3) end, { repeating = true })
+hl.bind(mainMod .. " + code:86", function() zoomfunction(0.3) end, { repeating = true })
+
+
 ------------------
 ---- LAUNCHER ----
 ------------------
