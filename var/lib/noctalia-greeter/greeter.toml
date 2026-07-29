@@ -1,0 +1,14 @@
+# noctalia-greeter greeter.toml
+# [session] default/last, [user] default, [appearance] scheme/password_style/hide_logo
+# [output] name/layout/scale/width/height/transforms, [idle] timeout, [cursor] theme/size/path
+# [keyboard] layout/variant/options/numlock
+# [auth] allow_empty_password (bool, default false; enables fingerprint/smartcard PAM auth)
+
+[appearance]
+scheme = "Synced"
+
+[auth]
+allow_empty_password = true
+
+[session]
+default = "Hyprland (uwsm-managed)"
