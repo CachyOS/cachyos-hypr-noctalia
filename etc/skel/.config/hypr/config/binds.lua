@@ -82,6 +82,11 @@ hl.bind(mainMod .. " + period",     hl.dsp.exec_cmd(noctCall .. "panel-toggle la
 hl.bind(mainMod .. " + L",          hl.dsp.exec_cmd(noctCall .. "session lock"))
 hl.bind(mainMod .. " + ALT + C",    hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
 
+-- Flatpaks (use `flatpak list` to find application ID)
+-- example use:
+-- hl.bind(mainMod .. " + M",          hl.dsp.exec_cmd(launchPrefix .. FLATPAK .."com.moonlight_stream.Moonlight"))
+
+
 ---------------------------
 ---- HARDWARE CONTROLS ----
 ---------------------------
