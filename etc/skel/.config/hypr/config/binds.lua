@@ -140,6 +140,18 @@ for i = 1, NUM_WPM do
     local key = i % 10
     hl.bind(mainMod .. " + CONTROL + " .. key, hl.dsp.focus({ workspace = "m~" .. i }))
 end
+-- Toggle Workspaces per Monitor (change "previous_per_monitor" to "previous" for global workspace toggle)
+for i = 1, NUM_WPM do
+    local key = i % 10
+    hl.bind(mainMod .. " + " .. key, function()
+    local active = hl.get_active_workspace()
+    if active and (active.id == i) then
+        hl.dispatch(hl.dsp.focus({ workspace = "previous_per_monitor" }))
+        else
+            hl.dispatch(hl.dsp.focus({ workspace = i }))
+            end
+        end)
+end
 
 -- Move to adjacent workspaces and next empty on a given monitor
 hl.bind(mainMod .. " + CONTROL + Right",       hl.dsp.focus({ workspace = "m+1" }))
