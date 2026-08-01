@@ -133,7 +133,7 @@ hl.bind(mainMod .. " + 3", hl.dsp.focus({ monitor = MONITOR3 }))
 -- Absolute
 for i = 1, NUM_WPM do
     local key = i % 10
-    hl.bind(mainMod .. " + TAB + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod .. " + ALT + " .. key, hl.dsp.focus({ workspace = i }))
 end
 -- Relative
 for i = 1, NUM_WPM do
