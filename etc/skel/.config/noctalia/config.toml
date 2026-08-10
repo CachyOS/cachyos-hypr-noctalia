@@ -113,11 +113,11 @@ color = "error"
 type = "spacer"
 
 [widget.temp]
-show_label = false
+show_value = false
 
 [widget.sysmon_2]
 glyph = "gpu-usage"
-show_label = false
+show_value = false
 stat = "gpu_temp"
 type = "sysmon"
 
@@ -137,6 +137,6 @@ color = "secondary"
 active_pill_size = 2.5
 capsule = true
 capsule_fill = "on_primary"
-display = "none"
 inactive_pill_size = 1.0
 pill_scale = 0.80
+show_labels = false
