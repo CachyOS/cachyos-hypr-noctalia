@@ -19,7 +19,7 @@ Thank you for using CachyOS Hypr/Noctalia Settings. We hope you enjoy your custo
 * kde-cli-tools
 * noctalia
 * qt6ct
-* satty
+* swash
 * slurp
 * wl-clipboard
 * xdg-desktop-portal
