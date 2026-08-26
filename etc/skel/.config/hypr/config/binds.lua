@@ -2,6 +2,13 @@ local mainMod = "SUPER"
 local noctCall = "noctalia msg "
 local launchPrefix = "uwsm app -- " -- if you are not using UWSM, make this empty (e.g. "")
 
+-- AZERTY fix: the number-row keys emit symbols (& é " ' ...) without Shift, so
+-- binding to the digit characters fails. Bind by physical keycode instead.
+-- Digit d -> evdev keycode: 1..9 => 10..18, 0 => 19
+local function digitCode(d)
+    return "code:" .. (d == 0 and 19 or (9 + d))
+end
+
 ---------------------------
 ---- WINDOW MANAGEMENT ----
 ---------------------------
@@ -27,9 +34,9 @@ hl.bind(mainMod .. " + SHIFT + Up",                   hl.dsp.window.move({ direc
 hl.bind(mainMod .. " + SHIFT + Right",                hl.dsp.window.move({ direction = "r" }))
 hl.bind(mainMod .. " + SHIFT + Left",                 hl.dsp.window.move({ direction = "l" }))
 hl.bind(mainMod .. " + SHIFT + Down",                 hl.dsp.window.move({ direction = "d" }))
-hl.bind(mainMod .. " + SHIFT + 1",                    hl.dsp.window.move({ monitor = MONITOR1 }))
-hl.bind(mainMod .. " + SHIFT + 2",                    hl.dsp.window.move({ monitor = MONITOR2 }))
-hl.bind(mainMod .. " + SHIFT + 3",                    hl.dsp.window.move({ monitor = MONITOR3 }))
+hl.bind(mainMod .. " + SHIFT + " .. digitCode(1),     hl.dsp.window.move({ monitor = MONITOR1 }))
+hl.bind(mainMod .. " + SHIFT + " .. digitCode(2),     hl.dsp.window.move({ monitor = MONITOR2 }))
+hl.bind(mainMod .. " + SHIFT + " .. digitCode(3),     hl.dsp.window.move({ monitor = MONITOR3 }))
 hl.bind(mainMod .. " + SHIFT + mouse_up",             hl.dsp.window.move({ monitor   = "-1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_down",           hl.dsp.window.move({ monitor   = "+1" }))
 hl.bind(mainMod .. " + CONTROL + SHIFT + Right",      hl.dsp.window.move({ workspace = "m+1" }))
@@ -38,7 +45,7 @@ hl.bind(mainMod .. " + CONTROL + SHIFT + mouse_up",   hl.dsp.window.move({ works
 hl.bind(mainMod .. " + CONTROL + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "m+1" }))
 for i = 1, NUM_WPM do
     local key = i % 10
-    hl.bind(mainMod .. " + SHIFT + CONTROL + " .. key, hl.dsp.window.move({ workspace = "m~" .. i }))
+    hl.bind(mainMod .. " + SHIFT + CONTROL + " .. digitCode(key), hl.dsp.window.move({ workspace = "m~" .. i }))
 end
 
 -- Move & Resize with mouse
@@ -125,20 +132,20 @@ hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-cen
 -------------------------------
 
 -- Focus on monitors
-hl.bind(mainMod .. " + 1", hl.dsp.focus({ monitor = MONITOR1 }))
-hl.bind(mainMod .. " + 2", hl.dsp.focus({ monitor = MONITOR2 }))
-hl.bind(mainMod .. " + 3", hl.dsp.focus({ monitor = MONITOR3 }))
+hl.bind(mainMod .. " + " .. digitCode(1), hl.dsp.focus({ monitor = MONITOR1 }))
+hl.bind(mainMod .. " + " .. digitCode(2), hl.dsp.focus({ monitor = MONITOR2 }))
+hl.bind(mainMod .. " + " .. digitCode(3), hl.dsp.focus({ monitor = MONITOR3 }))
 
 -- Focus on workspace number
 -- Absolute
 for i = 1, NUM_WPM do
     local key = i % 10
-    hl.bind(mainMod .. " + ALT + " .. key, hl.dsp.focus({ workspace = i }))
+    hl.bind(mainMod .. " + ALT + " .. digitCode(key), hl.dsp.focus({ workspace = i }))
 end
 -- Relative
 for i = 1, NUM_WPM do
     local key = i % 10
-    hl.bind(mainMod .. " + CONTROL + " .. key, hl.dsp.focus({ workspace = "m~" .. i }))
+    hl.bind(mainMod .. " + CONTROL + " .. digitCode(key), hl.dsp.focus({ workspace = "m~" .. i }))
 end
 
 -- Move to adjacent workspaces and next empty on a given monitor
