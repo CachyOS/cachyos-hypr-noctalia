@@ -41,6 +41,8 @@ You will want to configure a few user-specific things after setup. More reading 
   * Define your number of workspaces per monitor. Do not exceed 10.
 * `inputs.lua` You can define your various hypr input settings here. You'll probably want to adjust the `sensitivity`.
 * `binds.lua` Review this file to see all the keybinds for these dots. Add/remove binds that reference MONITOR# to scale it for your setup.
+  * Super+[1-3] focuses MONITOR1/2/3 (physical number-row keys). This is not a workspace switch.
+  * Super+Alt+[0-9] focuses workspace N absolutely. Super+Control+[0-9] focuses workspace N relative to the current monitor. Super+Shift+[1-3] moves the focused window to a monitor. Super+Control+Shift+[0-9] moves it to a relative workspace without following.
 * `windowrules.lua` If you find yourself wondering why certain windows have certain behaviors check this file; you can also add/remove rules as you see fit
 * `workspaces.lua` Add various workspace settings here. see examples, I recommend added 3 workspaces per monitor (shown) plus the gaming workspace to the primary monitor.
 * `environment.lua` is used for setting hypr or user specific environmental variables. not required to adjust, and it's preferable to add these to UWSM instead (see below).
@@ -51,3 +53,6 @@ You will want to configure a few user-specific things after setup. More reading 
 ### Location `noctalia settings` (Super + Z)
 * You can edit Noctalia settings here. I'd recommend going to the templates section and turning on any color templates for any apps you may use.
 * Also check out the plugins store for useful official and community plugins.
+
+## Screenshots
+Print-screen region/fullscreen pipes into Swash (not Satty). To skip the annotator, set copy to clipboard or save to file in Noctalia settings > shell > screenshot.
