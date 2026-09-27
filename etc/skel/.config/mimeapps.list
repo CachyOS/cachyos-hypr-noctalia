@@ -1,6 +1,11 @@
 [Added Associations]
 
 [Default Applications]
+image/gif=com.interversehq.qView.desktop;
+image/jpeg=com.interversehq.qView.desktop;
+image/jxl=com.interversehq.qView.desktop;
+image/png=com.interversehq.qView.desktop;
+image/webp=com.interversehq.qView.desktop;
 inode/directory=org.kde.dolphin.desktop;
 text/plain=org.gnome.TextEditor.desktop;
 x-scheme-handler/http=firefox.desktop;
