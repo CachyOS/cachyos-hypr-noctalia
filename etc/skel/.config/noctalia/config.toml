@@ -135,6 +135,7 @@ color = "secondary"
 
 [widget.workspaces]
 active_pill_size = 2.5
+anchor = true
 capsule = true
 capsule_fill = "on_primary"
 inactive_pill_size = 1.0
