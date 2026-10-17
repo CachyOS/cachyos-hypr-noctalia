@@ -164,5 +164,14 @@ hl.bind(mainMod .. " + CONTROL + mouse_up",   hl.dsp.focus({ workspace = "m-1" }
 hl.bind(mainMod .. " + CONTROL + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
 
 -- Special workspace (scratchpad)
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special())
+hl.bind(mainMod .. " + SHIFT + S", function()
+        local win = hl.get_active_window()
+        if win then
+                hl.dispatch(hl.dsp.window.move({
+                        workspace = win.workspace.name:match("special")
+                                and hl.get_active_workspace()
+                                or "special"
+                }))
+        end
+end)
