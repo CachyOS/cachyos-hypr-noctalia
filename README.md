@@ -26,7 +26,7 @@ Thank you for using CachyOS Hypr/Noctalia Settings. We hope you enjoy your custo
 * uwsm
 * xorg-xhost
 * xdg-desktop-portal-hyprland
-* capitaine-cursors
+* bibata-cursor-theme
 
 ## Post Setup Tasks
 You will want to configure a few user-specific things after setup. More reading here: https://wiki.cachyos.org/configuration/desktop_environments/hyprland/
