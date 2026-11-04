@@ -48,6 +48,9 @@ You will want to configure a few user-specific things after setup. More reading 
 * `env` is a file used for defining global variables, you can use this for general variables that need to be assigned for your specific user account.
 ### Location `~/.config/noctalia`
 * `config.toml` This is where base configuration lives for cachyos-hypr-noctalia lives. If you're wondering why the defaults differ from a vanilla noctalia v5 installation, this is why. You shouldn't have to touch anything in this file.
+### Location `~/.config/systemd/user`
+* `noctalia.service` runs the shell under systemd with `Restart=always`. If the shell is killed (a crash, an OOM kill under memory pressure) systemd starts it again within a few seconds, instead of leaving you with a compositor, your windows, and no bar or launcher.
+* If Super + Space ever stops showing the launcher, check the shell before anything else: `systemctl --user status noctalia`, then `systemctl --user restart noctalia`. Restarting Hyprland is not needed and closes every window.
 ### Location `noctalia settings` (Super + Z)
 * You can edit Noctalia settings here. I'd recommend going to the templates section and turning on any color templates for any apps you may use.
 * Also check out the plugins store for useful official and community plugins.

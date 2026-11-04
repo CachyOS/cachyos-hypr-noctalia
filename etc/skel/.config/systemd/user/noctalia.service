@@ -1,0 +1,17 @@
+[Unit]
+Description=Noctalia desktop shell
+Documentation=https://github.com/noctalia-dev/noctalia
+# Noctalia provides the bar, the launcher (Super+Space) and the notification daemon.
+# Started with a one-shot `exec_cmd` it cannot come back after being killed (an OOM
+# kill, a crash), which leaves a session with a compositor and no interface.
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/noctalia
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=graphical-session.target
