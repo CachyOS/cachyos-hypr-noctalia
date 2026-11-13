@@ -1,53 +1,36 @@
-# CachyOS Hypr/Noctalia Settings
+# cachyos-hypr-settings
 
-**Hyprland** is a dynamic tiling Wayland compositor based on wlroots that doesn't sacrifice on its looks. It supports multiple layouts, fancy effects, and has a very flexible IPC model allowing for a lot of customization.
+This repository contains `Hyprland` specific settings, like `hyprland.lua` and `xdg-desktop-portal`.
 
-**Noctalia** is a modern shell with desktop environment features without needing to piece meal various packages. It's an all-in-one solution for many features Hyprland lacks.
+Dependencies:
 
-This repository contains configuration files for various programs and tools used in the CachyOS Hyprland operating system on Noctalia shell. By using these configs, you can customize your system to better suit your needs and preferences.
+```Sh
+hyprland xdg-desktop-portal-hyprland
+```
 
-Thank you for using CachyOS Hypr/Noctalia Settings. We hope you enjoy your customized system!
+## Reposotiry tree
 
-## Dependencies
-* adw-gtk-theme
-* kitty
-* dolphin
-* gnome-text-editor
-* gnome-calculator
-* grim
-* hyprpicker
-* kde-cli-tools
-* noctalia
-* qt6ct
-* swash
-* slurp
-* wl-clipboard
-* xdg-desktop-portal
-* uwsm
-* xorg-xhost
-* xdg-desktop-portal-hyprland
+in [`hyprland.lua`](./etc/skel/.config/hypr/hyprland.lua) you can find all `require`s from directory [`config/`](./etc/skel/.config/hypr/config/)
 
-## Post Setup Tasks
-You will want to configure a few user-specific things after setup. More reading here: https://wiki.cachyos.org/configuration/desktop_environments/hyprland/
+in [`xdph.conf`](./etc/skel/.config/hypr/xdph.conf) you can find XDG Desktop Portal Hyprland settings. More on [XDPH](https://wiki.hypr.land/hypr-ecosystem/user/xdg-desktop-portal-hyprland/) wiki.
 
-### Location `~/.config/hypr/config`
-* `monitors.lua` will setup your monitors.
-  * `output` should be your monitor id; you can run `hyprctl monitors` to get this id (e.g. `DP-1`). 
-  * `mode` should be in a format such as `1920x1080@60` (horizontal x vertical @ refresh rate).
-  * `scale` you will most likely want `1`, but play around with it.
-  * You will need to reboot after the first adjustment, but future adjustments should be reflected live.
-* `variables.lua`
-  * Add your monitor assignments here. your `PRIMARY_MONITOR` and `MONITOR1` should generally be the same monitor. You can remove/add `MONITOR#` variables as needed.
-  * Define your number of workspaces per monitor. Do not exceed 10.
-* `inputs.lua` You can define your various hypr input settings here. You'll probably want to adjust the `sensitivity`.
-* `binds.lua` Review this file to see all the keybinds for these dots. Add/remove binds that reference MONITOR# to scale it for your setup.
-* `windowrules.lua` If you find yourself wondering why certain windows have certain behaviors check this file; you can also add/remove rules as you see fit
-* `workspaces.lua` Add various workspace settings here. see examples, I recommend added 3 workspaces per monitor (shown) plus the gaming workspace to the primary monitor.
-* `environment.lua` is used for setting hypr or user specific environmental variables. not required to adjust, and it's preferable to add these to UWSM instead (see below).
-### Location `~/.config/uwsm`
-* `env` is a file used for defining global variables, you can use this for general variables that need to be assigned for your specific user account.
-### Location `~/.config/noctalia`
-* `config.toml` This is where base configuration lives for cachyos-hypr-noctalia lives. If you're wondering why the defaults differ from a vanilla noctalia v5 installation, this is why. You shouldn't have to touch anything in this file.
-### Location `noctalia settings` (Super + Z)
-* You can edit Noctalia settings here. I'd recommend going to the templates section and turning on any color templates for any apps you may use.
-* Also check out the plugins store for useful official and community plugins.
+### Path [`.config/hypr/config/`](./etc/skel/.config/hypr/config/)
+
+| config | purpose |
+| ------ | ------- |
+| [`animations.lua`](./etc/skel/.config/hypr/config/animations.lua) | looks of `hyprland`; beziers and springs |
+| [`binds.lua`](./etc/skel/.config/hypr/config/binds.lua) | keybinds; workspaces, media control, etc |
+| [`decorations.lua`](./etc/skel/.config/hypr/config/decorations.lua) | main theming of `hyprland`; visuals of every window |
+| [`inputs.lua`](./etc/skel/.config/hypr/config/inputs.lua) | libinput related stuff; your keyboard, mouse, xkb layout |
+| [`misc.lua`](./etc/skel/.config/hypr/config/misc.lua) | misc stuff; mostly ungrouped stuff like ecosystem, direct scanout |
+| [`variables.lua`](./etc/skel/.config/hypr/config/variables.lua) | global config vars; used in config, like monitors, ws count |
+| [`windowrules`](./etc/skel/.config/hypr/config/windowrules.lua) | window rules; floating, fullscreen or always focus per apps |
+| [`workspaces.lua`](./etc/skel/.config/hypr/config/workspaces.lua) | workspace rules; where each app belong or names of them |
+
+### Path [`.config/xdg-desktop-portal/`](./etc/skel/.config/xdg-desktop-portal/)
+
+In `hyprland-portals.conf` you can configure `xdg-desktop-portal` directives for `hyprland`; Default portal already set
+
+<br/>
+
+Thank you for choosing CachyOS!
